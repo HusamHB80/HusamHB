@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Husam Habboub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html">HUSAM HABBOUB</a>
+    <a class="nav-link" href="index.html#work">BACK TO WORK</a>
+  </header>
+  <main class="section-pad" style="padding-top:150px;padding-bottom:110px;">
+    <p class="eyebrow">PROJECT <span id="project-id">01</span></p>
+    <h1 id="project-title" style="font:500 clamp(55px,8vw,120px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.06em;margin:0;max-width:1000px;">Project One</h1>
+    <div class="project-media" style="margin-top:55px;aspect-ratio:16/8.5;">
+      <div class="media-placeholder"><span class="media-label">FINAL VIDEO</span><span class="media-status">ADD VIDEO HERE</span></div>
+    </div>
+    <div class="about-grid" style="margin-top:50px;">
+      <p class="eyebrow">ROLE / TOOLS</p>
+      <div><p class="statement" id="project-type">Editing / Motion</p><p class="about-copy">Project description goes here. This page is intentionally minimal so the final video remains the focus.</p></div>
+    </div>
+  </main>
+  <footer class="site-footer"><span>HUSAM HABBOUB</span><span>VIDEO EDITOR / MOTION DESIGNER</span><span>© 2026</span></footer>
+  <script>
+    const params = new URLSearchParams(location.search); const id = params.get('project') || '01';
+    const data = { '01':['Project One','Editing / Motion'], '02':['Project Two','Social / Reels'], '03':['Project Three','Corporate / Edit'], '04':['Project Four','Motion / Visuals'] };
+    const item = data[id] || data['01'];
+    document.getElementById('project-id').textContent = id;
+    document.getElementById('project-title').textContent = item[0];
+    document.getElementById('project-type').textContent = item[1];
+  </script>
+</body>
+</html>
