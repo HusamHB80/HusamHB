@@ -1,0 +1,16 @@
+title: "Husam Habboub — Video Editor & Motion Designer"
+description: "Cinematic portfolio of Husam Habboub, video editor and motion designer."
+url: ""
+baseurl: "/husam-habboub-portfolio"
+lang: "en"
+markdown: kramdown
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+  
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

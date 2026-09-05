@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Work — Husam Habboub"
+description: "The Husam Habboub video portfolio archive."
+---
+<main>
+  <section class="archive-hero shell"><p class="eyebrow reveal">THE ARCHIVE</p><h1 class="archive-title reveal">All <em>work.</em></h1><p class="archive-intro reveal">A living collection of projects across editing, motion, social, corporate, educational and event video.</p></section>
+  <section class="archive shell">
+    <div class="filters reveal">
+      <button class="filter active" data-filter="All">ALL</button>
+      {% for category in site.data.categories %}<button class="filter" data-filter="{{ category }}">{{ category | upcase }}</button>{% endfor %}
+    </div>
+    <div class="archive-grid" id="archiveGrid">
+      {% for project in site.projects %}
+      <article class="project-card reveal" data-category="{{ project.category }}">
+        <a class="project-media" href="{{ project.url | relative_url }}">
+          {% if project.video %}<video muted loop playsinline preload="metadata" src="{{ project.video | relative_url }}"></video>{% elsif project.thumb %}<img src="{{ project.thumb | relative_url }}" alt="{{ project.title }}" loading="lazy">{% else %}<div class="media-placeholder"><div><span>{{ project.category | upcase }}</span><strong>{{ project.title }}</strong></div><span>ADD PREVIEW</span></div>{% endif %}
+          <span class="project-hover"><span class="project-view">OPEN PROJECT ↗</span></span>
+        </a>
+        <div class="project-meta"><div class="project-title"><span class="project-number">{{ forloop.index | prepend: '0' }}</span><span class="project-name">{{ project.title }}</span></div><span class="project-type">{{ project.category }}</span><span class="project-year">{{ project.year }}</span></div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
